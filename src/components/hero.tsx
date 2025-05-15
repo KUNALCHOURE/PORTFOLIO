@@ -52,11 +52,37 @@ export function HeroSection() {
           </div>
         </div>
         
-        {/* Right column - Illustration */}
+        {/* Right column - Profile Image */}
         <div className="flex items-center justify-center lg:justify-end">
-          <div className="relative w-full max-w-lg">
+          <div className="relative w-full max-w-lg flex items-center justify-center">
+            {/* Decorative elements */}
+
            
-           
+            <div className="relative z-10">
+              <div className="w-80 h-80 rounded-full border-4 border-purple-500 p-1 overflow-hidden backdrop-blur-sm bg-white">
+                
+                <div className="w-full h-full rounded-full flex items-center ">
+                
+                 
+                  
+                
+                  <Image 
+                    src="/profile2.jpg" 
+                    alt="Kunal Choure"
+                    width={500}
+                    height={300}
+                    className="rounded-full object-cover bg-white relative right-2 top-3"
+                    priority
+                  /> 
+                </div>
+              </div>
+              
+              {/* Glowing ring effect */}
+              <div className="absolute -inset-0.5 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 opacity-75 blur-md -z-10"></div>
+              
+              {/* Circle outer ring with gradient */}
+              <div className="absolute -inset-3 rounded-full border border-purple-500/30 -z-10"></div>
+            </div>
           </div>
         </div>
       </div>
