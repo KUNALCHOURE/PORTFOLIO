@@ -67,7 +67,7 @@ export function HeroSection() {
                   
                 
                   <Image 
-                    src="/profile2.jpg" 
+                    src="/profil.jpg" 
                     alt="Kunal Choure"
                     width={500}
                     height={300}
