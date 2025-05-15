@@ -4,8 +4,8 @@ import { GridBackgroundDemo } from "@/components/GridBackgroundDemo"; // import 
 export default function Home() {
   return (
     <>
-      <div className="h-screen bg-black">
-        <NavbarDemo />
+      <div className="h-screen  bg-black">
+        
         <GridBackgroundDemo /> {/* Use GridBackgroundDemo here */}
       </div>
     </>

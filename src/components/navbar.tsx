@@ -1,96 +1,125 @@
 "use client";
-import {
-  Navbar,
-  NavBody,
-  NavItems,
-  MobileNav,
-  NavbarLogo,
-  NavbarButton,
-  MobileNavHeader,
-  MobileNavToggle,
-  MobileNavMenu,
-} from "@/components/ui/resizable-navbar";
-import { useState } from "react";
+import React, { useState } from "react";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
+import { IconMoon, IconSun, IconMenu2, IconX } from "@tabler/icons-react";
 
 export function NavbarDemo() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+    // In a real implementation, you would toggle the theme here
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   const navItems = [
     {
-      name: "Features",
-      link: "#features",
+      name: "Skills",
+      link: "/skills",
     },
     {
-      name: "Pricing",
-      link: "#pricing",
+      name: "Work Experiences",
+      link: "/work-experiences",
+    },
+   
+    {
+      name: "Achievements",
+      link: "/achievements",
+    },
+ 
+  
+    {
+      name: "Resume",
+      link: "/resume",
     },
     {
-      name: "Contact",
-      link: "#contact",
+      name: "Contact Me",
+      link: "/contact",
     },
   ];
 
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   return (
-    <div className="relative w-full">
-      <Navbar>
-        {/* Desktop Navigation */}
-        <NavBody>
-          <NavbarLogo />
-          <NavItems items={navItems} />
-          <div className="flex items-center gap-4">
-            <NavbarButton variant="secondary">Login</NavbarButton>
-            <NavbarButton variant="primary">Book a call</NavbarButton>
-          </div>
-        </NavBody>
-
-        {/* Mobile Navigation */}
-        <MobileNav>
-          <MobileNavHeader>
-            <NavbarLogo />
-            <MobileNavToggle
-              isOpen={isMobileMenuOpen}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            />
-          </MobileNavHeader>
-
-          <MobileNavMenu
-            isOpen={isMobileMenuOpen}
-            onClose={() => setIsMobileMenuOpen(false)}
-          >
-            {navItems.map((item, idx) => (
-              <a
-                key={`mobile-link-${idx}`}
-                href={item.link}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="relative text-neutral-600 dark:text-neutral-300"
-              >
-                <span className="block">{item.name}</span>
-              </a>
-            ))}
-            <div className="flex w-full flex-col gap-4">
-              <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
-                className="w-full"
-              >
-                Login
-              </NavbarButton>
-              <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
-                className="w-full"
-              >
-                Book a call
-              </NavbarButton>
+    <>
+      <nav className="w-full py-4 border-b border-gray-800 bg-gray-950 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-around items-center">
+            {/* Logo */}
+            <div className="flex-shrink-0">
+              <Link href="/" className="font-cursive text-2xl text-white">
+                <span className="inline-block">&lt; </span>
+                <span className="inline-block italic font-bold">Kunal Choure</span>
+                <span className="inline-block"> /&gt;</span>
+              </Link>
             </div>
-          </MobileNavMenu>
-        </MobileNav>
-      </Navbar>
-     
+            
+            {/* Desktop Navigation */}
+            <div className="hidden md:block">
+              <div className="flex space-x-6">
+                {navItems.map((item, idx) => (
+                  <Link
+                    key={`nav-link-${idx}`}
+                    href={item.link}
+                    className="text-white hover:text-blue-400 transition duration-150"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+            
+            {/* Theme Toggle and Mobile Menu Button */}
+            <div className="flex items-center space-x-3">
+              {/* <button
+                onClick={toggleTheme}
+                className="p-2 rounded-full bg-blue-500 text-white"
+                aria-label="Toggle theme"
+              >
+                {isDarkMode ? (
+                  <IconSun size={20} />
+                ) : (
+                  <IconMoon size={20} />
+                )}
+              </button> */}
+              
+              {/* Mobile menu button */}
+              <button
+                className="md:hidden p-2 rounded-full bg-gray-800 text-white"
+                onClick={toggleMobileMenu}
+                aria-label="Toggle mobile menu"
+              >
+                {isMobileMenuOpen ? (
+                  <IconX size={20} />
+                ) : (
+                  <IconMenu2 size={20} />
+                )}
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
 
-      {/* Navbar */}
-    </div>
+      {/* Mobile menu dropdown */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden bg-gray-900 border-b border-gray-800">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            {navItems.map((item, idx) => (
+              <Link
+                key={`mobile-nav-link-${idx}`}
+                href={item.link}
+                className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-800"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+    </>
   );
 }
-
-
