@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { IconMoon, IconSun, IconMenu2, IconX } from "@tabler/icons-react";
+import { div } from "motion/react-client";
 
 export function NavbarDemo() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -61,13 +62,15 @@ export function NavbarDemo() {
             <div className="hidden md:block">
               <div className="flex space-x-6">
                 {navItems.map((item, idx) => (
+                  <div className="hover:bg-gray-200 rounded-md p-2 transition duration-150"> 
                   <Link
                     key={`nav-link-${idx}`}
                     href={item.link}
-                    className="text-white hover:text-blue-400 transition duration-150"
+                    className="text-white  hover:text-black transition duration-150"
                   >
                     {item.name}
                   </Link>
+                  </div>
                 ))}
               </div>
             </div>
@@ -106,7 +109,7 @@ export function NavbarDemo() {
       {/* Mobile menu dropdown */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-gray-900 border-b border-gray-800">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <div className="px-3 pt-2 pb-3 space-y-1 sm:px-3">
             {navItems.map((item, idx) => (
               <Link
                 key={`mobile-nav-link-${idx}`}
