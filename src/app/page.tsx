@@ -1,12 +1,17 @@
-import { NavbarDemo } from "@/components/navbar";
-import { GridBackgroundDemo } from "@/components/GridBackgroundDemo"; // import GridBackgroundDemo
+import { GridBackgroundDemo } from "@/components/GridBackgroundDemo";
+import { HeroSection } from "@/components/hero";
 
 export default function Home() {
   return (
     <>
-      <div className="h-screen  bg-black">
-        
-        <GridBackgroundDemo /> {/* Use GridBackgroundDemo here */}
+    
+     
+      <GridBackgroundDemo />
+      
+   
+      <div className="relative z-10 min-h-screen bg-transparent">
+        <HeroSection />
+       
       </div>
     </>
   );
