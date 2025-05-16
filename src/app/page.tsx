@@ -2,6 +2,7 @@ import { GridBackgroundDemo } from "@/components/GridBackgroundDemo";
 import { HeroSection } from "@/components/hero";
 import { SkillsSection } from "@/components/skills";
 import { ProjectsSection } from "@/components/projects";
+import { ExperienceSection } from "@/components/experience";
 
 export default function Home() {
   return (
@@ -14,6 +15,8 @@ export default function Home() {
         <HeroSection />
         <SkillsSection />
         <ProjectsSection />
+        <ExperienceSection />
+
         {/* Additional sections can be added here */}
       </div>
     </>
