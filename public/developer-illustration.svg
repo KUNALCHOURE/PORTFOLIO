@@ -1,0 +1,49 @@
+<svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background elements -->
+  <circle cx="250" cy="150" r="50" fill="#e2d8fd" opacity="0.4" />
+  <circle cx="350" cy="250" r="70" fill="#e2d8fd" opacity="0.3" />
+  
+  <!-- Character -->
+  <g transform="translate(150, 100)">
+    <!-- Body -->
+    <rect x="20" y="80" width="120" height="160" rx="60" fill="#7c3aed" />
+    
+    <!-- Head -->
+    <circle cx="80" cy="60" r="50" fill="#f5f3ff" />
+    
+    <!-- Face details -->
+    <circle cx="65" cy="50" r="5" fill="#1e293b" /> <!-- Left eye -->
+    <circle cx="95" cy="50" r="5" fill="#1e293b" /> <!-- Right eye -->
+    <path d="M60 75 Q80 90 100 75" stroke="#1e293b" stroke-width="3" fill="none" /> <!-- Smile -->
+    
+    <!-- Arms -->
+    <rect x="-20" y="100" width="80" height="30" rx="15" fill="#7c3aed" transform="rotate(-30 -20 100)" /> <!-- Left arm -->
+    <rect x="140" y="80" width="80" height="30" rx="15" fill="#7c3aed" transform="rotate(30 140 80)" /> <!-- Right arm -->
+    
+    <!-- Hand wave -->
+    <circle cx="195" cy="50" r="20" fill="#ffd700" /> <!-- Right hand -->
+    
+    <!-- Legs -->
+    <rect x="20" y="220" width="40" height="100" rx="20" fill="#7c3aed" /> <!-- Left leg -->
+    <rect x="100" y="220" width="40" height="100" rx="20" fill="#7c3aed" /> <!-- Right leg -->
+    
+    <!-- Feet -->
+    <ellipse cx="40" cy="320" rx="25" ry="15" fill="#1e1b4b" /> <!-- Left foot -->
+    <ellipse cx="120" cy="320" rx="25" ry="15" fill="#1e1b4b" /> <!-- Right foot -->
+  </g>
+  
+  <!-- Decorative elements -->
+  <circle cx="100" cy="100" r="10" fill="#ffd700" />
+  <circle cx="400" cy="150" r="8" fill="#ffd700" />
+  <circle cx="350" cy="400" r="12" fill="#ffd700" />
+  
+  <!-- Tech symbols floating around -->
+  <text x="100" y="200" font-family="monospace" font-size="24" fill="#e2d8fd">&lt;/&gt;</text>
+  <text x="380" y="220" font-family="monospace" font-size="24" fill="#e2d8fd">{}</text>
+  <text x="300" y="350" font-family="monospace" font-size="24" fill="#e2d8fd">( )</text>
+  
+  <!-- Target/bullseye -->
+  <circle cx="350" cy="300" r="40" fill="none" stroke="#7c3aed" stroke-width="4" />
+  <circle cx="350" cy="300" r="25" fill="none" stroke="#7c3aed" stroke-width="4" />
+  <circle cx="350" cy="300" r="10" fill="#7c3aed" />
+</svg> 

@@ -61,8 +61,8 @@ export function NavbarDemo() {
             {/* Desktop Navigation */}
             <div className="hidden md:block">
               <div className="flex space-x-6">
-                {navItems.map((item, idx) => (
-                  <div className="hover:bg-gray-200 rounded-md p-2 transition duration-150"> 
+                {navItems.map((item,idx) => (
+                  <div  key={idx} className="hover:bg-gray-200 rounded-md p-2 transition duration-150"> 
                   <Link
                     key={`nav-link-${idx}`}
                     href={item.link}

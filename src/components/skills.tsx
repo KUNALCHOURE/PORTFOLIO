@@ -142,7 +142,7 @@ export function SkillsSection() {
           {categories.map((category, catIndex) => (
             <div 
               key={catIndex} 
-              className="category-container opacity-0 transform translate-y-6 transition-all duration-700 p-8 rounded-xl border border-purple-500/20 bg-[#0c1024]/80 backdrop-blur-sm hover:shadow-[0_0_30px_rgba(139,92,246,0.15)] transition-all duration-500"
+              className="category-container opacity-0 transform translate-y-6 transition-all duration-700 p-8 rounded-xl border border-purple-500/20 bg-[#0c1024]/80 backdrop-blur-sm hover:shadow-[0_0_30px_rgba(139,92,246,0.15)] "
             >
               <div className="flex items-center justify-center gap-3 mb-6">
                 <span className="text-3xl">{category.icon}</span>

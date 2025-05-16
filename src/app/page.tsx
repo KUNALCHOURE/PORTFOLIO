@@ -1,6 +1,7 @@
 import { GridBackgroundDemo } from "@/components/GridBackgroundDemo";
 import { HeroSection } from "@/components/hero";
 import { SkillsSection } from "@/components/skills";
+import { ProjectsSection } from "@/components/projects";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <div className="relative z-10 min-h-screen bg-transparent">
         <HeroSection />
         <SkillsSection />
+        <ProjectsSection />
         {/* Additional sections can be added here */}
       </div>
     </>
