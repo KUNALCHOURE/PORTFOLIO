@@ -95,11 +95,11 @@ export  function Education() {
                   </ul>
                 </div>
               </div>
-            </div>
+                 </div>
           </div>
+           </div>
         </div>
-      </div>
-
+       
       <style jsx>{`
         .appear {
           opacity: 1;
