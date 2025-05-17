@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef } from 'react';
 
-export default function Education() {
+export  function Education() {
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
