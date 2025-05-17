@@ -1,18 +1,11 @@
 "use client";
-import React, { useState } from "react";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
-import { IconMoon, IconSun, IconMenu2, IconX } from "@tabler/icons-react";
-import { div } from "motion/react-client";
+import React, { useState, useEffect } from "react";
+import { IconMenu2, IconX } from "@tabler/icons-react";
 
 export function NavbarDemo() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-    // In a real implementation, you would toggle the theme here
-  };
+  const [activeSection, setActiveSection] = useState("home");
+  const [scrolled, setScrolled] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -20,85 +13,133 @@ export function NavbarDemo() {
 
   const navItems = [
     {
+      name: "Home",
+      id: "home",
+    },
+    {
       name: "Skills",
-      link: "/skills",
+      id: "skills", 
     },
     {
-      name: "Work Experiences",
-      link: "/work-experiences",
-    },
-   
-    {
-      name: "Achievements",
-      link: "/achievements",
-    },
- 
-  
-    {
-      name: "Resume",
-      link: "/resume",
+      name: "Projects",
+      id: "projects",
     },
     {
-      name: "Contact Me",
-      link: "/contact",
+      name: "Experience",
+      id: "experience",
+    },
+    {
+      name: "Certifications",
+      id: "certifications",
+    },
+    {
+      name: "Education",
+      id: "education",
+    },
+    {
+      name: "Contact",
+      id: "contact",
     },
   ];
 
+  const scrollToSection = (sectionId: string) => {
+    setIsMobileMenuOpen(false);
+    
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const yOffset = -80; // Account for navbar height
+      const y = section.getBoundingClientRect().top + window.scrollY + yOffset;
+      
+      window.scrollTo({
+        top: y,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Change navbar background when scrolled
+      if (window.scrollY > 20) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+      
+      // Update active section based on scroll position
+      const sections = navItems.map(item => document.getElementById(item.id));
+      const currentPosition = window.scrollY + 100;
+      
+      // Default to home if at the top
+      if (window.scrollY < 100) {
+        setActiveSection("home");
+        return;
+      }
+      
+      // Find the current active section
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        if (section && section.offsetTop <= currentPosition) {
+          setActiveSection(navItems[i].id);
+          break;
+        }
+      }
+    };
+    
+    // Run once on mount to set initial active section
+    handleScroll();
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []); // Remove navItems from dependency array to avoid re-attaching listeners
+
   return (
     <>
-      <nav className="w-full py-4 border-b border-gray-800 bg-gray-950 text-white">
+      <nav className={`w-full py-4 fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-[#0c1024]/95 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-around items-center">
+          <div className="flex justify-between items-center">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <Link href="/" className="font-cursive text-2xl text-white">
-                <span className="inline-block">&lt; </span>
-                <span className="inline-block italic font-bold">Kunal Choure</span>
-                <span className="inline-block"> /&gt;</span>
-              </Link>
+              <button 
+                onClick={() => scrollToSection('home')} 
+                className="font-cursive text-2xl text-white"
+              >
+                <span className="inline-block text-purple-400">&lt; </span>
+                <span className="inline-block font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-600">Kunal Choure</span>
+                <span className="inline-block text-purple-400"> /&gt;</span>
+              </button>
             </div>
             
             {/* Desktop Navigation */}
             <div className="hidden md:block">
-              <div className="flex space-x-6">
-                {navItems.map((item,idx) => (
-                  <div  key={idx} className="hover:bg-gray-200 rounded-md p-2 transition duration-150"> 
-                  <Link
-                    key={`nav-link-${idx}`}
-                    href={item.link}
-                    className="text-white  hover:text-black transition duration-150"
+              <div className="flex space-x-2">
+                {navItems.map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className={`px-3 py-2 rounded-md transition duration-300 ${
+                      activeSection === item.id 
+                        ? 'bg-purple-500/20 text-purple-400 border border-purple-500/30' 
+                        : 'text-gray-300 hover:bg-purple-500/10 hover:text-purple-300'
+                    }`}
                   >
                     {item.name}
-                  </Link>
-                  </div>
+                  </button>
                 ))}
               </div>
             </div>
             
-            {/* Theme Toggle and Mobile Menu Button */}
-            <div className="flex items-center space-x-3">
-              {/* <button
-                onClick={toggleTheme}
-                className="p-2 rounded-full bg-blue-500 text-white"
-                aria-label="Toggle theme"
-              >
-                {isDarkMode ? (
-                  <IconSun size={20} />
-                ) : (
-                  <IconMoon size={20} />
-                )}
-              </button> */}
-              
-              {/* Mobile menu button */}
+            {/* Mobile Menu Button */}
+            <div className="md:hidden">
               <button
-                className="md:hidden p-2 rounded-full bg-gray-800 text-white"
+                className="p-2 rounded-full text-gray-300 hover:bg-purple-500/20 hover:text-purple-300 transition-all"
                 onClick={toggleMobileMenu}
                 aria-label="Toggle mobile menu"
               >
                 {isMobileMenuOpen ? (
-                  <IconX size={20} />
+                  <IconX size={24} />
                 ) : (
-                  <IconMenu2 size={20} />
+                  <IconMenu2 size={24} />
                 )}
               </button>
             </div>
@@ -107,21 +148,34 @@ export function NavbarDemo() {
       </nav>
 
       {/* Mobile menu dropdown */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden bg-gray-900 border-b border-gray-800">
-          <div className="px-3 pt-2 pb-3 space-y-1 sm:px-3">
-            {navItems.map((item, idx) => (
-              <Link
-                key={`mobile-nav-link-${idx}`}
-                href={item.link}
-                className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-800"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
+      <div 
+        className={`fixed top-[60px] left-0 right-0 bg-[#0c1024]/95 backdrop-blur-md border-b border-purple-500/20 shadow-lg transform transition-transform duration-300 z-40 ${
+          isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
+        }`}
+      >
+        <div className="px-4 py-3 space-y-2">
+          {navItems.map((item) => (
+            <button
+              key={`mobile-${item.id}`}
+              onClick={() => scrollToSection(item.id)}
+              className={`block w-full text-left px-4 py-3 rounded-md transition duration-200 ${
+                activeSection === item.id 
+                  ? 'bg-purple-500/20 text-purple-400 border border-purple-500/30' 
+                  : 'text-gray-300 hover:bg-purple-500/10 hover:text-purple-300'
+              }`}
+            >
+              {item.name}
+            </button>
+          ))}
         </div>
+      </div>
+      
+      {/* Overlay for mobile menu */}
+      {isMobileMenuOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-30 md:hidden" 
+          onClick={toggleMobileMenu}
+        />
       )}
     </>
   );
