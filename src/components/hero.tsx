@@ -15,14 +15,11 @@ export function HeroSection() {
           </h1>
           
           <h2 className="text-2xl md:text-3xl text-purple-400 font-medium">
-            A passionate Full Stack Software Developer
+          Full-stack developer and problem solver
           </h2>
           
           <p className="text-lg text-gray-300 max-w-xl">
-            <span className="inline-block animate-float">🚀</span> having an experience of building Web and
-            Mobile applications with JavaScript / Reactjs /
-            Nodejs / React Native and some other cool
-            libraries and frameworks.
+            <span className="inline-block animate-float">🚀</span>  I'm Kunal Choure, a Computer Science (Data Science) student at Ramdeobaba University, Nagpur. I’m passionate about building efficient, scalable applications and solving complex problems through code. With a strong foundation in DSA and full-stack development, I thrive in collaborative environments and continuously seek to learn and innovate.
           </p>
           
 
@@ -67,7 +64,7 @@ export function HeroSection() {
                   
                 
                   <Image 
-                    src="/profil.jpg" 
+                    src="/profile2.jpg" 
                     alt="Kunal Choure"
                     width={500}
                     height={300}
