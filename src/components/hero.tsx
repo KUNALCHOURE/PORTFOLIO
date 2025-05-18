@@ -38,11 +38,16 @@ export function HeroSection() {
           
           {/* Action buttons */}
           <div className="flex flex-wrap gap-4 pt-6">
-            <Link href="/contact" className="px-8 py-3 bg-purple-600 hover:bg-purple-700 rounded-md text-white font-medium transition-all">
+            <a href="#contact"  className="px-8 py-3 bg-purple-600 hover:bg-purple-700 rounded-md text-white font-medium transition-all">
               CONTACT ME
-            </Link>
-            <Link href="/resume" className="px-8 py-3 bg-purple-600 hover:bg-purple-700 rounded-md text-white font-medium transition-all">
-              DOWNLOAD MY RESUME
+            </a>
+            <Link href="/resume.pdf" 
+            className="px-8 py-3 bg-purple-600 hover:bg-purple-700 rounded-md text-white font-medium transition-all"
+             //download
+             target="_blank"
+             rel="noopener noreferrer"
+            >
+              MY RESUME
             </Link>
           </div>
         </div>

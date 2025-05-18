@@ -14,7 +14,7 @@ export default function Home() {
       <GridBackgroundDemo />
       
       {/* Content sections with z-index to appear above the background */}
-      <div className="relative z-10 min-h-screen bg-transparent">
+      <div className="relative z-10 min-h-screen bg-transparent scroll-smooth">
         <HeroSection />
         <SkillsSection />
         <ProjectsSection />
