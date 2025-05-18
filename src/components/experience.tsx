@@ -40,10 +40,10 @@ export function ExperienceSection() {
 
   const experience = {
     title: "Technical Co-Head",
-    organization: "DASCA Committee",
+    organization: "Data Science Association (DASCA)",
     location: "RAMDEOBABA UNIVERSITY",
     period: "SEPTEMPBER, 2024 – PRESENT",
-    icon: "🛠️",
+    icon: "",
     responsibilities: [
       "Led and managed technical events and workshops",
       "Coordinated with team members for project planning",
@@ -71,7 +71,6 @@ export function ExperienceSection() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600">
               Leadership & Experience
             </span>
-            <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full"></div>
           </h2>
         </div>
         
