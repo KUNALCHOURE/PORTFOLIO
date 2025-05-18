@@ -39,7 +39,7 @@ export function ProjectsSection() {
       title: "Campus Connect",
       description:
         "Campus Connect is a private platform for students, faculty, and alumni to connect, collaborate, and share resources. It features a roadmap generator, interactive chatbot, and secure access with protected routes.",
-      image: "https://via.placeholder.com/800x600/6D28D9/FFFFFF?text=Campus+Connect",
+      image: "projects/campusconnect.jpg",
       technologies: ["React", "React Router", "Context API", "CSS"],
       demoLink: "https://campus-connect-eight-gray.vercel.app/",
       codeLink: "https://github.com/KUNALCHOURE/Campus-Connect.git"
@@ -48,7 +48,7 @@ export function ProjectsSection() {
       title: "PrimeStays",
       description:
         "A full-stack luxury property listing platform with authentication, filtering, image uploads via Cloudinary, user reviews, and a fully responsive UI. Built using the MERN stack.",
-      image: "https://via.placeholder.com/800x600/1E40AF/FFFFFF?text=PrimeStays",
+      image:"projects/PrimeStays.png",
       technologies: ["React", "Tailwind CSS", "MongoDB", "Express", "Node.js", "Cloudinary"],
       demoLink: "https://prime-stays.vercel.app/",
       codeLink: "https://github.com/KUNALCHOURE/PrimeStays.git"
@@ -57,7 +57,7 @@ export function ProjectsSection() {
       title: "Medisen",
       description:
         "Medisen predicts the top 5 possible diseases based on user symptoms using a Random Forest Classifier. It provides relevant symptom information for each prediction.",
-      image: "https://via.placeholder.com/800x600/059669/FFFFFF?text=Medisen",
+      image: "projects/medisen.png",
       technologies: ["React", "CSS", "Axios", "Random Forest", "Flask", "Python"],
       demoLink: "",
       codeLink: "https://github.com/KUNALCHOURE/Medisen.git"
@@ -66,7 +66,7 @@ export function ProjectsSection() {
       title: "MeloMaster 🎵",
       description:
         "MeloMaster is a responsive and visually appealing website for a music school. It features course listings, instructor bios, webinars, and testimonials. Built with Next.js and Tailwind CSS.",
-      image: "https://via.placeholder.com/800x600/9333EA/FFFFFF?text=MeloMaster",
+     image:"projects/Melomaster.png",
       technologies: ["Next.js", "React", "Tailwind CSS"],
       demoLink: "https://music-teal-seven.vercel.app/",
       codeLink: "https://github.com/KUNALCHOURE/MeloMaster.git"
@@ -75,7 +75,7 @@ export function ProjectsSection() {
       title: "Weather App",
       description:
         "A responsive React weather application using the OpenWeatherMap API. Displays real-time weather data with dynamic backgrounds based on weather conditions.",
-      image: "https://via.placeholder.com/800x600/3B82F6/FFFFFF?text=Weather+App",
+      image: "projects/weather.png",
       technologies: ["React", "Material-UI", "OpenWeatherMap API"],
       demoLink: "",
       codeLink: "https://github.com/KUNALCHOURE/WHEATHER_APP.git"
@@ -84,7 +84,7 @@ export function ProjectsSection() {
       title: "Expense Tracker",
       description:
         "A web-based application that helps users manage personal finances by tracking income and expenses. Includes a real-time balance, income, and expense summary.",
-      image: "https://via.placeholder.com/800x600/F59E0B/FFFFFF?text=Expense+Tracker",
+      image: "projects/expensetracker.png",
       technologies: ["React", "JavaScript", "CSS"],
       demoLink: "https://kunalchoure.github.io/EXPENSE-TRACKER/",
       codeLink: "https://github.com/KUNALCHOURE/EXPENSE-TRACKER.git"
@@ -93,7 +93,7 @@ export function ProjectsSection() {
       title: "Pattern Memory Game",
       description:
         "A memory-enhancing game that challenges users to replicate increasingly complex color sequences. High scores are tracked using local storage.",
-      image: "https://via.placeholder.com/800x600/10B981/FFFFFF?text=Pattern+Memory+Game",
+      image: "projects/patternmemorygame.png",
       technologies: ["HTML", "CSS", "JavaScript"],
       demoLink: "https://kunalchoure.github.io/PATTERN-MEMORY-GAME/",
       codeLink: "https://github.com/KUNALCHOURE/PATTERN-MEMORY-GAME.git"
@@ -140,12 +140,12 @@ export function ProjectsSection() {
               <div className="relative h-48 overflow-hidden">
                 {project.image && (
                   <div className="w-full h-full relative overflow-hidden">
-                    {/* <Image 
-                      src={project.image} 
+                    <Image 
+                      src={project.image.startsWith('http') ? project.image : `/${project.image}`} 
                       alt={project.title}
                       fill
                       className="object-cover transform group-hover:scale-110 transition-transform duration-700"
-                    /> */}
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0c1024] to-transparent opacity-80"></div>
                   </div>
                 )}
