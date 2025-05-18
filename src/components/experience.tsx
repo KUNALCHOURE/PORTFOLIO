@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-
+import Image from "next/image";
 export function ExperienceSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
@@ -43,7 +43,7 @@ export function ExperienceSection() {
     organization: "Data Science Association (DASCA)",
     location: "RAMDEOBABA UNIVERSITY",
     period: "SEPTEMPBER, 2024 – PRESENT",
-    icon: "",
+    icon: "/Dasca.jpeg",
     responsibilities: [
       "Led and managed technical events and workshops",
       "Coordinated with team members for project planning",
@@ -89,8 +89,15 @@ export function ExperienceSection() {
             <div className="flex flex-col md:flex-row items-start gap-8">
               {/* Left side - Icon */}
               <div className="flex justify-center items-center">
-                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-purple-500/20 to-purple-700/20 border border-purple-500/40 backdrop-blur-md flex items-center justify-center text-5xl transform hover:scale-110 transition-transform duration-500 hover:shadow-[0_0_25px_rgba(168,85,247,0.5)]">
-                  {experience.icon}
+                <div className="w-36 h-36 rounded-full bg-gradient-to-br from-purple-500/20 to-purple-700/20 border border-purple-500/40 backdrop-blur-md flex items-center justify-center text-5xl transform hover:scale-110 transition-transform duration-500 hover:shadow-[0_0_25px_rgba(168,85,247,0.5)]">
+                 <Image
+                 src={experience.icon}
+                 width={140}
+                 height={140}
+                 alt="DASCA Logo"
+                 className="w-full h-full object-contain rounded-full bg-white"
+                 
+                 />
                 </div>
               </div>
               

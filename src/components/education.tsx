@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from 'react';
-
+import Image from 'next/image';
 export  function Education() {
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -37,12 +37,15 @@ export  function Education() {
             <div className="flex flex-col md:flex-row gap-8">
               {/* Left side - College Logo/Icon */}
               <div className="flex-shrink-0 flex justify-center">
-                <div className="w-32 h-32 bg-gradient-to-br from-purple-500/10 to-purple-700/10 border border-purple-500/30 rounded-xl flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-16 h-16 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                    <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.825-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
-                  </svg>
+                <div className="w-36 h-36 bg-white rounded-full flex items-center justify-center overflow-hidden p-1 border-2 border-purple-500/30">
+                  <Image 
+                    src="/rbulogo.jpg" 
+                    alt="RUB Logo"
+                    width={144}
+                    height={144}
+                    className="w-full h-full object-contain rounded-full bg-white"
+                    priority
+                  />
                 </div>
               </div>
               
