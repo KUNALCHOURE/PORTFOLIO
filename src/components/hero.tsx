@@ -32,9 +32,7 @@ export function HeroSection() {
               className="h-12 w-12 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center transition-all">
               <IconBrandLinkedin size={24} />
             </Link>
-            <Link href="" target="_blank" className=" h-12 w-12  bg-pink-600  rounded-full hover:bg-pink-700 flex items-center justify-center transition-all">
-            <IconBrandInstagram size={24} />
-            </Link>
+            
             
           </div>
           

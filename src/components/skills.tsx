@@ -47,21 +47,16 @@ export function SkillsSection() {
       skills: [
         { name: "HTML", icon: "5", color: "#E34F26" },
         { name: "CSS", icon: "3", color: "#1572B6" },
-        { name: "SASS", icon: "", color: "#CC6699" },
         { name: "JavaScript", icon: "JS", color: "#F7DF1E" },
         { name: "TypeScript", icon: "TS", color: "#3178C6" },
         { name: "React JS", icon: "⚛️", color: "#61DAFB" },
-        { name: "Angular", icon: "", color: "#DD0031" },
-        { name: "Vue.js", icon: "", color: "#4FC08D" },
         { name: "Redux", icon: "", color: "#764ABC" },
         { name: "Next JS", icon: "", color: "#000000" },
         { name: "Tailwind CSS", icon: "", color: "#06B6D4" },
         { name: "Material UI", icon: "", color: "#0081CB" },
         { name: "Bootstrap", icon: "", color: "#7952B3" },
-        { name: "GSAP", icon: "", color: "#88CE02" },
         { name: "Framer Motion", icon: "", color: "#0055FF" },
         { name: "Styled Components", icon: "", color: "#DB7093" },
-        { name: "Chakra UI", icon: "", color: "#319795" }
       ]
     },
     {
@@ -70,14 +65,15 @@ export function SkillsSection() {
       skills: [
         { name: "Node.js", icon: "", color: "#339933" },
         { name: "Express JS", icon: "ex", color: "#000000" },
-        { name: "NestJS", icon: "", color: "#E0234E" },
-        { name: "Django", icon: "", color: "#092E20" },
         { name: "Flask", icon: "", color: "#000000" },
         { name: "FastAPI", icon: "", color: "#009688" },
-        { name: "Springboot", icon: "", color: "#6DB33F" },
         { name: "REST API", icon: "", color: "#FF5733" },
         { name: "MySQL", icon: "", color: "#4479A1" },
         { name: "MongoDB", icon: "", color: "#47A248" },
+        { name: "EJS", icon: "", color: "#47A248" },
+        { name: "JWT", icon: "", color: "#47A248" },
+        { name: "Socket.io", icon: "", color: "#47A248" },
+
       ]
     },
     {
@@ -91,7 +87,7 @@ export function SkillsSection() {
         { name: "Firebase", icon: "🔥", color: "#FFCA28" },
         { name: "Vercel", icon: "", color: "#000000" },
         { name: "Netlify", icon: "", color: "#00C7B7" },
-        { name: "Linux", icon: "", color: "#FCC624" }
+        {name:"Cloudinary",icon:"",color:"#00C7B7"},
       ]
     },
     {
@@ -106,9 +102,10 @@ export function SkillsSection() {
         { name: "VS Code", icon: "", color: "#007ACC" },
         { name: "IntelliJ", icon: "", color: "#000000" },
         { name: "Postman", icon: "", color: "#FF6C37" },
-        { name: "Webpack", icon: "", color: "#8DD6F9" },
         { name: "Vite", icon: "", color: "#646CFF" },
-        { name: "npm", icon: "", color: "#CB3837" }
+        { name: "npm", icon: "", color: "#CB3837" },
+        { name: "Eclipse", icon: "", color: "#2C3E50" },
+        
       ]
     }    
   ];
