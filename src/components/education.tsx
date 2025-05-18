@@ -28,9 +28,9 @@ export  function Education() {
   }, []);
 
   return (
-    <div className='min-h-screen py-24'>
+    <div id="education" className='min-h-screen py-24'>
       <div className="flex flex-col justify-center items-center gap-12">
-        <span className='sm:text-3xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600 font-bold'> Education </span>
+        <span className='text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600 font-bold'> Education </span>
 
         <div className="w-full max-w-3xl opacity-0 transform translate-y-10" ref={cardRef}>
           <div className="p-8 bg-[#0c1024]/90 backdrop-blur-md border border-purple-500/20 rounded-xl hover:shadow-[0_0_25px_rgba(168,85,247,0.2)] transition-all duration-300">

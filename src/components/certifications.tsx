@@ -47,48 +47,36 @@ export function CertificationsSection() {
   const certifications = [
   
     {
-      id: 2,
-      title: "Full Stack Web Development Bootcamp",
+      id: 1,
+      title: "Full Stack Web Development ",
       issuer: "Apna College",
-      description: "Completed a comprehensive web development bootcamp covering HTML, CSS, JavaScript, React, Node.js, Express, and MongoDB.",
+      description: "Completed a comprehensive web development Course covering HTML, CSS, JavaScript, React, Node.js, Express, and MongoDB.",
       date: "Feb 2024",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="text-blue-500 w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 2L2 7l10 5 10-5-10-5zm0 10l10-5v10l-10 5-10-5V7l10 5z" />
-        </svg>
-      ),
+      icon:"/certifications/apnacollege.jpg",
       buttons: [
         { label: "View Certificate", link: "#" } // Replace # with actual link if available
       ],
       category: "Web Development"
     },
     {
-      id: 3,
+      id: 2,
       title: "Postman Student Expert",
       issuer: "Postman",
       description: "Learned API fundamentals, testing, and documentation using Postman. Earned Student Expert badge.",
       date: "Mar 2024",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="text-orange-500 w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M4 4h16v4H4zM4 10h16v10H4z" />
-        </svg>
-      ),
+      icon:"/certifications/postmanlogo.png",
       buttons: [
         { label: "View Certificate", link: "#" }
       ],
       category: "Web Development"
     },
     {
-      id: 4,
+      id: 3,
       title: "Python Micro-Course",
       issuer: "Kaggle",
       description: "Completed hands-on Python course covering core programming concepts, data types, and control structures.",
       date: "Jan 2024",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="text-yellow-500 w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
-        </svg>
-      ),
+      icon:"/certifications/kagglelogo.png",
       buttons: [
         { label: "View Certificate", link: "#" }
       ],
@@ -137,8 +125,14 @@ export function CertificationsSection() {
                 <div className="flex flex-col md:flex-row gap-6">
                   {/* Logo/Image */}
                   <div className="flex-shrink-0">
-                    <div className="w-32 h-32 bg-gradient-to-br from-purple-500/10 to-purple-700/10 border border-purple-500/30 rounded-xl flex items-center justify-center p-3 transform hover:scale-105 transition-transform duration-300 hover:shadow-[0_0_25px_rgba(168,85,247,0.5)]">
-                      {cert.icon}
+                    <div className="w-36 h-36 bg-gradient-to-br from-purple-500/10 to-purple-700/10 border border-purple-500/30 rounded-xl flex items-center justify-center p-3 transform hover:scale-105 transition-transform duration-300 hover:shadow-[0_0_25px_rgba(168,85,247,0.5)]">
+                    <Image
+                          src={cert.icon}
+                          alt={cert.title}
+                          width={140}
+                          height={140}
+                          className="w-full h-full object-contain"
+                        />
                     </div>
                   </div>
                   
@@ -196,7 +190,13 @@ export function CertificationsSection() {
                   <div className="flex-shrink-0">
                     <div className="w-16 h-16 bg-gradient-to-br from-purple-500/10 to-purple-700/10 border border-purple-500/30 rounded-lg flex items-center justify-center transform hover:scale-105 transition-transform duration-300">
                       <div className="w-10 h-10">
-                        {cert.icon}
+                        <Image
+                          src={cert.icon}
+                          alt={cert.title}
+                          width={40}
+                          height={40}
+                          className="w-full h-full object-contain"
+                        />
                       </div>
                     </div>
                   </div>

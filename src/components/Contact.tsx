@@ -75,7 +75,7 @@ export function Contact() {
   }, []);
 
   return (
-    <div id="contact-section" className="py-24 relative overflow-hidden">
+    <div id="contact" className="py-24 relative overflow-hidden">
       {/* Background glow effects */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-5">
         <div className="absolute top-1/3 right-1/4 w-[350px] h-[350px] bg-purple-500/10 rounded-full filter blur-[100px]"></div>
