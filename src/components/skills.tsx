@@ -129,7 +129,6 @@ export function SkillsSection() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600">
               Skills & Technologies
             </span>
-            <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full"></div>
           </h2>
 
         </div>

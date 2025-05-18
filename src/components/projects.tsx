@@ -34,18 +34,76 @@ export function ProjectsSection() {
     };
   }, []);
 
-  // Project data
   const projects = [
     {
-      title: "Employee Management",
-      description: "This project aims to build an employee management system that consolidates all information of a company",
-      image: "https://via.placeholder.com/800x600/FF6B35/FFFFFF?text=Employee+Management",
-      technologies: ["React", "CSS", "Material UI"],
-      demoLink: "#",
-      codeLink: "#"
+      title: "Campus Connect",
+      description:
+        "Campus Connect is a private platform for students, faculty, and alumni to connect, collaborate, and share resources. It features a roadmap generator, interactive chatbot, and secure access with protected routes.",
+      image: "https://via.placeholder.com/800x600/6D28D9/FFFFFF?text=Campus+Connect",
+      technologies: ["React", "React Router", "Context API", "CSS"],
+      demoLink: "https://campus-connect-eight-gray.vercel.app/",
+      codeLink: "https://github.com/KUNALCHOURE/Campus-Connect.git"
     },
-    
+    {
+      title: "PrimeStays",
+      description:
+        "A full-stack luxury property listing platform with authentication, filtering, image uploads via Cloudinary, user reviews, and a fully responsive UI. Built using the MERN stack.",
+      image: "https://via.placeholder.com/800x600/1E40AF/FFFFFF?text=PrimeStays",
+      technologies: ["React", "Tailwind CSS", "MongoDB", "Express", "Node.js", "Cloudinary"],
+      demoLink: "https://prime-stays.vercel.app/",
+      codeLink: "https://github.com/KUNALCHOURE/PrimeStays.git"
+    },
+    {
+      title: "Medisen",
+      description:
+        "Medisen predicts the top 5 possible diseases based on user symptoms using a Random Forest Classifier. It provides relevant symptom information for each prediction.",
+      image: "https://via.placeholder.com/800x600/059669/FFFFFF?text=Medisen",
+      technologies: ["React", "CSS", "Axios", "Random Forest", "Flask", "Python"],
+      demoLink: "",
+      codeLink: "https://github.com/KUNALCHOURE/Medisen.git"
+    },
+    {
+      title: "MeloMaster 🎵",
+      description:
+        "MeloMaster is a responsive and visually appealing website for a music school. It features course listings, instructor bios, webinars, and testimonials. Built with Next.js and Tailwind CSS.",
+      image: "https://via.placeholder.com/800x600/9333EA/FFFFFF?text=MeloMaster",
+      technologies: ["Next.js", "React", "Tailwind CSS"],
+      demoLink: "https://music-teal-seven.vercel.app/",
+      codeLink: "https://github.com/KUNALCHOURE/MeloMaster.git"
+    },
+    {
+      title: "Weather App",
+      description:
+        "A responsive React weather application using the OpenWeatherMap API. Displays real-time weather data with dynamic backgrounds based on weather conditions.",
+      image: "https://via.placeholder.com/800x600/3B82F6/FFFFFF?text=Weather+App",
+      technologies: ["React", "Material-UI", "OpenWeatherMap API"],
+      demoLink: "",
+      codeLink: "https://github.com/KUNALCHOURE/WHEATHER_APP.git"
+    },
+    {
+      title: "Expense Tracker",
+      description:
+        "A web-based application that helps users manage personal finances by tracking income and expenses. Includes a real-time balance, income, and expense summary.",
+      image: "https://via.placeholder.com/800x600/F59E0B/FFFFFF?text=Expense+Tracker",
+      technologies: ["React", "JavaScript", "CSS"],
+      demoLink: "https://kunalchoure.github.io/EXPENSE-TRACKER/",
+      codeLink: "https://github.com/KUNALCHOURE/EXPENSE-TRACKER.git"
+    },
+    {
+      title: "Pattern Memory Game",
+      description:
+        "A memory-enhancing game that challenges users to replicate increasingly complex color sequences. High scores are tracked using local storage.",
+      image: "https://via.placeholder.com/800x600/10B981/FFFFFF?text=Pattern+Memory+Game",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      demoLink: "https://kunalchoure.github.io/PATTERN-MEMORY-GAME/",
+      codeLink: "https://github.com/KUNALCHOURE/PATTERN-MEMORY-GAME.git"
+    }
+  
+ 
   ];
+  
+  
+  
 
  
 
