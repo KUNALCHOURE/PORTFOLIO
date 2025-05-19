@@ -3,10 +3,13 @@ import nodemailer from 'nodemailer';
 
 export async function POST(request: Request) {
   try {
+      console.log("🚀 Contact API triggered");
     // Get form data from request
     const formData = await request.json();
+   
     const { name, email, message } = formData;
-    
+     console.log(name);
+     console.log(email);
     // Validate required fields
     if (!name || !email || !message) {
       return NextResponse.json(
@@ -14,7 +17,7 @@ export async function POST(request: Request) {
         { status: 400 }
       );
     }
-
+console.log(process.env.EMAIL_USER|| "not found")
     // Create email transporter
     const transporter = nodemailer.createTransport({
       service: 'gmail',
@@ -42,10 +45,27 @@ export async function POST(request: Request) {
         <p><strong>Message:</strong> ${message}</p>
       `,
     };
+// const mailOptions2 = {
+//   from: process.env.EMAIL_USER,
+//   to: email,
+//   subject: "Your message has been sent successfully ✅",
+//   replyTo: process.env.EMAIL_USER,
+//   text: `Your message has been sent successfully. Thank you for reaching out!`,
+//   html: `
+//     <h3>Your message has been sent successfully ✅</h3>
+//     <p>Hi ${name},</p>
+//     <p>Thanks for reaching out. I’ve received your message and will get back to you shortly.</p>
+//     <hr>
+//     <p><strong>Your Message:</strong></p>
+//     <p>${message}</p>
+//   `
+// };
 
     // Send email
     await transporter.sendMail(mailOptions);
+    //await transporter.sendMail(mailOptions2);
 console.log("eail send");
+
     // Return success response
     return NextResponse.json(
       { message: 'Your message has been sent successfully!' },
