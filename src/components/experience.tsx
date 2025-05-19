@@ -4,38 +4,39 @@ import Image from "next/image";
 export function ExperienceSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            if (cardRef.current) {
-              cardRef.current.classList.add('appear');
-            }
-            
-            const items = document.querySelectorAll('.responsibility-item');
-            items.forEach((item, index) => {
-              setTimeout(() => {
-                item.classList.add('visible');
-              }, 100 * (index + 1));
-            });
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (cardRef.current) {
+            cardRef.current.classList.add('appear');
           }
-        });
-      },
-      { threshold: 0.2 }
-    );
+          
+          const items = document.querySelectorAll('.responsibility-item');
+          items.forEach((item, index) => {
+            setTimeout(() => {
+              item.classList.add('visible');
+            }, 100 * (index + 1));
+          });
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+  const currentSectionRef = sectionRef.current;
+
+  if (currentSectionRef) {
+    observer.observe(currentSectionRef);
+  }
+
+  return () => {
+    if (currentSectionRef) {
+      observer.unobserve(currentSectionRef);
     }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
+  };
+}, []);
 
   const experience = {
     title: "Technical Co-Head",

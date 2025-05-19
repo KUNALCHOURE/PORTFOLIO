@@ -22,13 +22,16 @@ export function ProjectsSection() {
       { threshold: 0.1 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    // Store the current value of the ref
+    const currentSectionRef = sectionRef.current;
+
+    if (currentSectionRef) {
+      observer.observe(currentSectionRef);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentSectionRef) {
+        observer.unobserve(currentSectionRef);
       }
     };
   }, []);
@@ -97,14 +100,7 @@ export function ProjectsSection() {
       demoLink: "https://kunalchoure.github.io/PATTERN-MEMORY-GAME/",
       codeLink: "https://github.com/KUNALCHOURE/PATTERN-MEMORY-GAME.git"
     }
-  
- 
   ];
-  
-  
-  
-
- 
 
   return (
     <section id="projects" ref={sectionRef} className="py-24 relative overflow-hidden">
@@ -196,8 +192,6 @@ export function ProjectsSection() {
             </div>
           ))}
         </div>
-        
-    
       </div>
       
        <style jsx>{`
@@ -242,4 +236,4 @@ export function ProjectsSection() {
       `}</style>
     </section> 
   );
-} 
+}

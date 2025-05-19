@@ -20,7 +20,7 @@ export function HeroSection() {
           </h2>
           
          <p className="text-lg text-gray-300 max-w-xl">
-  <span className="inline-block animate-float">🚀</span> I'm Kunal Choure, a Computer Science (Data Science) student at Ramdeobaba University, Nagpur. I&apos;m passionate about building efficient, scalable applications and solving complex problems through code. With a strong foundation in DSA and full-stack development, I thrive in collaborative environments and continuously seek to learn and innovate.
+  <span className="inline-block animate-float">🚀</span> I&apos;m Kunal Choure, a Computer Science (Data Science) student at Ramdeobaba University, Nagpur. I&apos;m passionate about building efficient, scalable applications and solving complex problems through code. With a strong foundation in DSA and full-stack development, I thrive in collaborative environments and continuously seek to learn and innovate.
 </p>
 
 
@@ -29,7 +29,7 @@ export function HeroSection() {
               className="h-12 w-12 bg-gray-800 hover:bg-gray-700 rounded-full flex items-center justify-center transition-all">
               <IconBrandGithub size={24} />
             </Link>
-            <Link href="https://www.linkedin.com/in/kunal-choure-904713270/" target="Linked In" rel="noopener noreferrer"
+            <Link href="https://www.linkedin.com/in/kunal-choure-904713270/" target="_blank" rel="noopener noreferrer"
               className="h-12 w-12 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center transition-all">
               <IconBrandLinkedin size={24} />
             </Link>
@@ -89,4 +89,4 @@ export function HeroSection() {
       </div>
     </section>
   );
-} 
+}

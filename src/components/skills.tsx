@@ -28,13 +28,16 @@ export function SkillsSection() {
       { threshold: 0.1 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    // Store the current value of the ref
+    const currentSectionRef = sectionRef.current;
+
+    if (currentSectionRef) {
+      observer.observe(currentSectionRef);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentSectionRef) {
+        observer.unobserve(currentSectionRef);
       }
     };
   }, []);
@@ -73,7 +76,6 @@ export function SkillsSection() {
         { name: "EJS", icon: "", color: "#47A248" },
         { name: "JWT", icon: "", color: "#47A248" },
         { name: "Socket.io", icon: "", color: "#47A248" },
-
       ]
     },
     {
@@ -87,7 +89,7 @@ export function SkillsSection() {
         { name: "Firebase", icon: "🔥", color: "#FFCA28" },
         { name: "Vercel", icon: "", color: "#000000" },
         { name: "Netlify", icon: "", color: "#00C7B7" },
-        {name:"Cloudinary",icon:"",color:"#00C7B7"},
+        { name: "Cloudinary", icon: "", color: "#00C7B7" },
       ]
     },
     {
@@ -105,7 +107,6 @@ export function SkillsSection() {
         { name: "Vite", icon: "", color: "#646CFF" },
         { name: "npm", icon: "", color: "#CB3837" },
         { name: "Eclipse", icon: "", color: "#2C3E50" },
-        
       ]
     }    
   ];
@@ -130,7 +131,6 @@ export function SkillsSection() {
               Skills & Technologies
             </span>
           </h2>
-
         </div>
         
         {/* Category boxes like second reference */}
@@ -175,8 +175,6 @@ export function SkillsSection() {
             </div>
           ))}
         </div>
-
-       
       </div>
       
       <style jsx>{`
@@ -226,4 +224,4 @@ export function SkillsSection() {
       `}</style>
     </section>
   );
-} 
+}

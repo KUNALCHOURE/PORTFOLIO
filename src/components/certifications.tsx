@@ -7,34 +7,37 @@ export function CertificationsSection() {
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('appear');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
+  const section = sectionRef.current;
+  const cards = cardsRef.current;
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    cardsRef.current.forEach((card) => {
-      if (card) observer.observe(card);
-    });
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-      cardsRef.current.forEach((card) => {
-        if (card) observer.unobserve(card);
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('appear');
+        }
       });
-    };
-  }, []);
+    },
+    { threshold: 0.1 }
+  );
+
+  if (section) {
+    observer.observe(section);
+  }
+
+  cards.forEach((card) => {
+    if (card) observer.observe(card);
+  });
+
+  return () => {
+    if (section) {
+      observer.unobserve(section);
+    }
+    cards.forEach((card) => {
+      if (card) observer.unobserve(card);
+    });
+  };
+}, []);
 
   const addToRefs = (el: HTMLDivElement | null) => {
     if (el && !cardsRef.current.includes(el)) {

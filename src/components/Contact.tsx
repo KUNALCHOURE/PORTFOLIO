@@ -26,14 +26,19 @@ export function Contact() {
       { threshold: 0.1 }
     );
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    if (formContainerRef.current) observer.observe(formContainerRef.current);
+    // Capture current ref values
+    const currentSectionRef = sectionRef.current;
+    const currentFormContainerRef = formContainerRef.current;
+
+    if (currentSectionRef) observer.observe(currentSectionRef);
+    if (currentFormContainerRef) observer.observe(currentFormContainerRef);
 
     return () => {
-      if (sectionRef.current) observer.unobserve(sectionRef.current);
-      if (formContainerRef.current) observer.unobserve(formContainerRef.current);
+      // Use captured values in cleanup
+      if (currentSectionRef) observer.unobserve(currentSectionRef);
+      if (currentFormContainerRef) observer.unobserve(currentFormContainerRef);
     };
-  }, []);
+  }, []); // Empty dependency array as observer and refs are stable for the lifetime of the component
 
   // Remove broken heading artifacts if any
   useEffect(() => {
@@ -66,7 +71,7 @@ export function Contact() {
       window.removeEventListener("scroll", fixContactHeading);
       clearInterval(interval);
     };
-  }, []);
+  }, []); // Empty dependency array ensures this runs once on mount and cleans up on unmount
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -90,11 +95,11 @@ export function Contact() {
       } else {
         setStatus(data.error || "Failed to send message.");
       }
-    }  catch (e) {
-  console.error('Error:', e);
-  setStatus(`An unexpected error occurred}`);
-}
- finally {
+    } catch (e) {
+      console.error('Error:', e);
+      // Use type assertion or check if 'e' is an Error instance
+      setStatus(`An unexpected error occurred: ${e instanceof Error ? e.message : String(e)}`);
+    } finally {
       setLoading(false);
     }
   };

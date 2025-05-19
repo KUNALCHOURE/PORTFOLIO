@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 
 export function NavbarDemo() {
@@ -57,41 +57,42 @@ export function NavbarDemo() {
     }
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      // Change navbar background when scrolled
-      if (window.scrollY > 20) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-      
-      // Update active section based on scroll position
-      const sections = navItems.map(item => document.getElementById(item.id));
-      const currentPosition = window.scrollY + 100;
-      
-      // Default to home if at the top
-      if (window.scrollY < 100) {
-        setActiveSection("home");
-        return;
-      }
-      
-      // Find the current active section
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = sections[i];
-        if (section && section.offsetTop <= currentPosition) {
-          setActiveSection(navItems[i].id);
-          break;
-        }
-      }
-    };
+  // Memoize the handleScroll function with useCallback
+  const handleScroll = useCallback(() => {
+    // Change navbar background when scrolled
+    if (window.scrollY > 20) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
     
+    // Update active section based on scroll position
+    const sections = navItems.map(item => document.getElementById(item.id));
+    const currentPosition = window.scrollY + 100;
+    
+    // Default to home if at the top
+    if (window.scrollY < 100) {
+      setActiveSection("home");
+      return;
+    }
+    
+    // Find the current active section
+    for (let i = sections.length - 1; i >= 0; i--) {
+      const section = sections[i];
+      if (section && section.offsetTop <= currentPosition) {
+        setActiveSection(navItems[i].id);
+        break;
+      }
+    }
+  }, [navItems]); // Include navItems in the dependency array
+
+  useEffect(() => {
     // Run once on mount to set initial active section
     handleScroll();
     
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []); // Remove navItems from dependency array to avoid re-attaching listeners
+  }, [handleScroll]); // Only depends on the memoized handleScroll function
 
   return (
     <>

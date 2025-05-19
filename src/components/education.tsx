@@ -3,29 +3,30 @@ import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 export  function Education() {
   const cardRef = useRef<HTMLDivElement>(null);
+useEffect(() => {
+  const currentCard = cardRef.current;
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('appear');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('appear');
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
 
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
+  if (currentCard) {
+    observer.observe(currentCard);
+  }
+
+  return () => {
+    if (currentCard) {
+      observer.unobserve(currentCard);
     }
-
-    return () => {
-      if (cardRef.current) {
-        observer.unobserve(cardRef.current);
-      }
-    };
-  }, []);
+  };
+}, []);
 
   return (
     <div id="education" className='min-h-screen py-24'>
