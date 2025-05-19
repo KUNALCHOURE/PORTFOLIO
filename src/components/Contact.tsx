@@ -90,9 +90,11 @@ export function Contact() {
       } else {
         setStatus(data.error || "Failed to send message.");
       }
-    } catch (error) {
-      setStatus("An unexpected error occurred.");
-    } finally {
+    }  catch (e) {
+  console.error('Error:', e);
+  setStatus(`An unexpected error occurred}`);
+}
+ finally {
       setLoading(false);
     }
   };

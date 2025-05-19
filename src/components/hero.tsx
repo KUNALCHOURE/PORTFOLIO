@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { IconBrandGithub, IconBrandLinkedin, IconMail, IconBrandGitlab, IconBrandFacebook, IconBrandMedium,IconBrandInstagram } from "@tabler/icons-react";
+import { IconBrandGithub, IconBrandLinkedin} from "@tabler/icons-react";
 
 export function HeroSection() {
   return (
@@ -10,18 +10,19 @@ export function HeroSection() {
         {/* Left column - Text content */}
         <div className="flex flex-col justify-center space-y-6">
           <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
-            Hi all, I'm <span className="text-purple-500">Kunal</span> 
-            <span className="inline-block ml-2 animate-wave">👋</span>
-          </h1>
+  Hi all, I&apos;m <span className="text-purple-500">Kunal</span> 
+  <span className="inline-block ml-2 animate-wave">👋</span>
+</h1>
+
           
           <h2 className="text-2xl md:text-3xl text-purple-400 font-medium">
           Full-stack developer and problem solver
           </h2>
           
-          <p className="text-lg text-gray-300 max-w-xl">
-            <span className="inline-block animate-float">🚀</span>  I'm Kunal Choure, a Computer Science (Data Science) student at Ramdeobaba University, Nagpur. I’m passionate about building efficient, scalable applications and solving complex problems through code. With a strong foundation in DSA and full-stack development, I thrive in collaborative environments and continuously seek to learn and innovate.
-          </p>
-          
+         <p className="text-lg text-gray-300 max-w-xl">
+  <span className="inline-block animate-float">🚀</span> I'm Kunal Choure, a Computer Science (Data Science) student at Ramdeobaba University, Nagpur. I&apos;m passionate about building efficient, scalable applications and solving complex problems through code. With a strong foundation in DSA and full-stack development, I thrive in collaborative environments and continuously seek to learn and innovate.
+</p>
+
 
           <div className="flex flex-wrap gap-3 pt-4">
             <Link href="https://github.com/KUNALCHOURE" target="_blank" rel="noopener noreferrer"

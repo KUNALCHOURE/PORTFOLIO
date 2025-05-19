@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 export function CertificationsSection() {
   const sectionRef = useRef<HTMLElement>(null);
