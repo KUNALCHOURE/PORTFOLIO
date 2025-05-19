@@ -40,6 +40,10 @@ export function NavbarDemo() {
       name: "Contact",
       id: "contact",
     },
+    {
+      name:"",
+      id:""
+    }
   ];
 
   const scrollToSection = (sectionId: string) => {
