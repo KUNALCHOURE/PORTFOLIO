@@ -47,6 +47,15 @@ export function ProjectsSection() {
       codeLink: "https://github.com/KUNALCHOURE/Campus-Connect.git"
     },
     {
+      title: "Career Nest",
+      description:
+        "Career Nest is a full-stack job board application with AI-powered resume analysis and intelligent job matching. Features include advanced job search, secure authentication, resume parsing, and employer tools.",
+      image: "projects/CareerNest.png",
+      technologies: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "OpenAI API", "Cloudinary"],
+      demoLink: "https://career-nest-lovat.vercel.app/",
+      codeLink: "https://github.com/KUNALCHOURE/Career-Nest"
+    },
+    {
       title: "PrimeStays",
       description:
         "A full-stack luxury property listing platform with authentication, filtering, image uploads via Cloudinary, user reviews, and a fully responsive UI. Built using the MERN stack.",
@@ -99,7 +108,8 @@ export function ProjectsSection() {
       technologies: ["HTML", "CSS", "JavaScript"],
       demoLink: "https://kunalchoure.github.io/PATTERN-MEMORY-GAME/",
       codeLink: "https://github.com/KUNALCHOURE/PATTERN-MEMORY-GAME.git"
-    }
+    },
+ 
   ];
 
   return (
