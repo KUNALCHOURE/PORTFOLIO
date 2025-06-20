@@ -52,16 +52,16 @@ export function ProjectsSection() {
         "Career Nest is a full-stack job board application with AI-powered resume analysis and intelligent job matching. Features include advanced job search, secure authentication, resume parsing, and employer tools.",
       image: "projects/CareerNest.png",
       technologies: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "OpenAI API", "Cloudinary"],
-      demoLink: "https://career-nest-lovat.vercel.app/",
+      //demoLink: "https://career-nest-lovat.vercel.app/",
       codeLink: "https://github.com/KUNALCHOURE/Career-Nest"
     },
     {
       title: "PrimeStays",
       description:
         "A full-stack luxury property listing platform with authentication, filtering, image uploads via Cloudinary, user reviews, and a fully responsive UI. Built using the MERN stack.",
-      image:"projects/PrimeStays.png",
+      image:"projects/Primestays.png",
       technologies: ["React", "Tailwind CSS", "MongoDB", "Express", "Node.js", "Cloudinary"],
-      demoLink: "https://prime-stays.vercel.app/",
+     demoLink: "https://prime-stays.vercel.app/",
       codeLink: "https://github.com/KUNALCHOURE/PrimeStays.git"
     },
     {
@@ -175,8 +175,9 @@ export function ProjectsSection() {
                     </span>
                   ))}
                 </div>
-                
+             
                 <div className="flex space-x-4 mt-4 ">
+                {project.demoLink?
                   <a 
                     href={project.demoLink} 
                     className="flex items-center justify-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-500 to-purple-700 text-white font-medium hover:from-purple-600 hover:to-purple-800 transition-all duration-300"
@@ -187,7 +188,8 @@ export function ProjectsSection() {
                       <polyline points="15 3 21 3 21 9"></polyline>
                       <line x1="10" y1="14" x2="21" y2="3"></line>
                     </svg>
-                  </a>
+                  </a>:<></>
+             }
                   <a 
                     href={project.codeLink} 
                     className="flex items-center justify-center px-4 py-2 rounded-full border border-purple-500 text-purple-400 font-medium hover:bg-purple-500/10 transition-all duration-300"
