@@ -86,7 +86,6 @@ export function SkillsSection() {
         { name: "GitHub", icon: "", color: "#181717" },
         { name: "GitLab", icon: "", color: "#FCA121" },
         { name: "Docker", icon: "🐳", color: "#2496ED" },
-        { name: "Firebase", icon: "🔥", color: "#FFCA28" },
         { name: "Vercel", icon: "", color: "#000000" },
         { name: "Netlify", icon: "", color: "#00C7B7" },
         { name: "Cloudinary", icon: "", color: "#00C7B7" },
