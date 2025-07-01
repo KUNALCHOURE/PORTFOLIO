@@ -42,7 +42,7 @@ export function ProjectsSection() {
       description:
         "Campus Connect is a private platform for students, faculty, and alumni to connect, collaborate, and share resources. It features a roadmap generator, interactive chatbot, and secure access with protected routes.",
       image: "projects/campusconnect.jpg",
-      technologies: ["React", "React Router", "Context API", "CSS"],
+      technologies: ["MongoDB", "Express", "React", "Node.js", "TailwindCSS", "OpenAI API"],
       demoLink: "https://campus-connect-eight-gray.vercel.app/",
       codeLink: "https://github.com/KUNALCHOURE/Campus-Connect.git"
     },
