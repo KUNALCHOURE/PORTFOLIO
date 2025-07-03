@@ -76,7 +76,7 @@ useEffect(() => {
                 
                 <div className="mb-6">
                   <span className="inline-block py-1.5 px-4 text-md rounded-md bg-blue-500/10 text-blue-300 border border-blue-500/30">
-                    CGPA: 8.6/10
+                    CGPA: 8.7/10
                   </span>
                 </div>
                 
